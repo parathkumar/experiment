@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  {{ alertText }}
+</mat-dialog-content>
+@if(!isDelete){
+<mat-dialog-actions class="pull-right">
+  <button mat-raised-button (click)="closeDialog(true)">yes</button>
+  <button mat-raised-button (click)="closeDialog(false)">no</button>
+</mat-dialog-actions>
+} @else {
+<mat-dialog-actions class="pull-right">
+  <button mat-raised-button color="warn" (click)="closeDialog(true)">
+    Delete
+  </button>
+  <button mat-raised-button (click)="closeDialog(false)">Cancel</button>
+</mat-dialog-actions>
+}
