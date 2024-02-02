@@ -1,0 +1,24 @@
+<div class="section-container">
+    <div class="section-top">
+        <div class="button-with-title">
+            <div>
+                <h1 class="section-heading">Publications</h1>
+            </div>
+            <div>
+                <button mat-raised-button color="primary" style ="margin-right: 2px;" (click)="openRegionModal()">
+                    <mat-icon>place</mat-icon>
+                    Regions
+                </button>
+                <button mat-raised-button color="primary" (click)="openAddPublicationsModal()">
+                    <mat-icon>add</mat-icon>
+                    Add Publications
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="section-body">
+            <div>
+                  <app-publications-list></app-publications-list>
+            </div>                   
+    </div>
+</div>

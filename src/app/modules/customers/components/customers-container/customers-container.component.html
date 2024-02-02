@@ -1,0 +1,67 @@
+<div class="section-container">
+  <div class="section-top">
+    <h1 class="section-heading">Customers</h1>
+  </div>
+  <div class="section-body">
+    <form class="flex-test">
+      <div>
+        <mat-form-field>
+          <mat-label>Field</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let column of columnMap" value="column.objName" (click)="changeFilterColumn(column)">{{ column.displayText }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Search Customers</mat-label>
+          <input matInput (keyup)="applyFilter($event)">
+        </mat-form-field>        
+      </div>
+      <button mat-mini-fab color="primary" type="button" matTooltip="New customer" (click)='onAddCustomer()'>
+        <mat-icon>add</mat-icon>
+      </button>
+    </form>
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 table-fit">
+
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+          <th mat-header-cell *matHeaderCellDef> Email </th>
+          <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Phone Number">
+          <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+          <td mat-cell *matCellDef="let element"> {{element.phoneNumbers}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Landmark">
+          <th mat-header-cell *matHeaderCellDef> Landmark </th>
+          <td mat-cell *matCellDef="let element"> {{element.businessLandmark}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Actions">
+          <th mat-header-cell *matHeaderCellDef style="text-align: center;"> Actions </th>
+          <td mat-cell *matCellDef="let element" style="justify-content: center;" class="Actions">
+            <button mat-button href="#" aria-label="edit" matTooltip="Edit details" (click)="onEditCustomer(element)">
+              <mat-icon color="primary">edit</mat-icon>
+            </button>
+            <button mat-button href="#" aria-label="delete" matTooltip="Delete customer" (click)="onDelete(element)">
+              <mat-icon color="warn">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching the search </td>
+        </tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+  </div>
+</div>
