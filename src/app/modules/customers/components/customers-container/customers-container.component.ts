@@ -15,13 +15,13 @@ import { MatOption } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSelect } from '@angular/material/select';
 import { NgFor } from '@angular/common';
-
+import { MatInput } from '@angular/material/input';
 @Component({
   selector: 'app-customers-container',
   templateUrl: './customers-container.component.html',
   styleUrls: ['./customers-container.component.scss'],
   standalone: true,
-  imports: [NgFor, MatFormField,MatLabel,MatOption,MatIconModule,MatTableModule,MatPaginator,MatSelect],
+  imports: [NgFor, MatFormField,MatLabel,MatOption,MatIconModule,MatTableModule,MatPaginator,MatSelect, MatInput],
   providers:[CustomersService]
 })
 export class CustomersContainerComponent implements OnInit{

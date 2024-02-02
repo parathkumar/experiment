@@ -12,13 +12,14 @@ import { ConfirmationAlertComponent } from '@shared/components';
 import { IApiResponse } from '@shared/interfaces/IApiResponse';
 import { MatIconModule } from '@angular/material/icon'; 
 import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
 
 @Component({
   selector: 'app-release-order-container',
   templateUrl: './release-order-container.component.html',
   styleUrls: ['./release-order-container.component.scss'],
   standalone: true,
-  imports: [MatIconModule,MatLabel,MatFormField,MatPaginator,MatTableModule]
+  imports: [MatIconModule,MatLabel,MatFormField,MatPaginator,MatTableModule,MatInput]
 })
 export class ReleaseOrderContainerComponent implements OnInit {
 

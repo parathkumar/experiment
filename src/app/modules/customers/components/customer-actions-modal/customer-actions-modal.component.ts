@@ -10,12 +10,14 @@ import { SuccessAlertComponent } from '@shared/components';
 import { IApiResponse } from '@shared/interfaces/IApiResponse';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormField, MatLabel } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
 @Component({
   selector: 'app-customer-actions-modal',
   templateUrl: './customer-actions-modal.component.html',
   styleUrls: ['./customer-actions-modal.component.scss'],
   standalone: true,
-  imports: [ReactiveFormsModule,MatDialogModule,MatIconModule,MatFormField,MatLabel]
+  imports: [ReactiveFormsModule,MatDialogModule,MatIconModule,MatFormField,MatLabel,MatInput],
+  providers:[CustomersService]
 })
 export class CustomerActionsModalComponent implements OnInit {
 

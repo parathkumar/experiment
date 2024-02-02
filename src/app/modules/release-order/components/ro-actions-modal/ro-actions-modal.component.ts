@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialog, MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { forkJoin } from 'rxjs';
 import { CustomersService } from 'src/app/modules/customers/services/customers.service';
@@ -15,13 +15,16 @@ import { MatFormField, MatLabel } from '@angular/material/form-field';
 import { MatOption } from '@angular/material/core';
 import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
 import { NgFor } from '@angular/common';
+import { MatInput } from '@angular/material/input';
+import { MatSelect } from '@angular/material/select';
 
 @Component({
   selector: 'app-ro-actions-modal',
   templateUrl: './ro-actions-modal.component.html',
   styleUrls: ['./ro-actions-modal.component.scss'],
   standalone: true,
-  imports: [NgFor, ReactiveFormsModule,MatIconModule, MatChipsModule, MatLabel, MatFormField, MatOption, MatDialogModule, MatDatepickerModule]
+  imports: [NgFor, ReactiveFormsModule,MatIconModule, MatChipsModule, MatLabel, MatFormField, MatOption, MatDialogModule, MatDatepickerModule, MatInput, MatSelect, FormsModule],
+  providers: [CustomersService]
 })
 export class RoActionsModalComponent implements OnInit {
 

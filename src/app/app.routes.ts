@@ -6,9 +6,14 @@ import { HttpClientModule } from '@angular/common/http';
 export const routes: Routes = [
     {
       path: '', component: LayoutContainerComponent, children: [
+        // {
+        //   path: '',
+        //   redirectTo: '/auth/login',
+        //   pathMatch: 'full',
+        // },
         {
           path: '',
-          redirectTo: '/auth/login',
+          redirectTo: 'dashboard',
           pathMatch: 'full',
         },
         {
