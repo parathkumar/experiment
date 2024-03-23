@@ -16,7 +16,7 @@ export class ReleaseOrderService {
   createReleaseOrder(roObject: any):Observable<IApiResponse>{
     return this.apiService.postData(releaseOrderUrls.createReleaseOrder,roObject);
   }
-  deleteReleaseOrder(RoId: Number):Observable<IApiResponse>{
+  deleteReleaseOrder(RoId: number):Observable<IApiResponse>{
     return this.apiService.deleteData(releaseOrderUrls.deleteReleaseOrder,RoId);
   }
   editReleaseOrder(roObject: any):Observable<IApiResponse>{

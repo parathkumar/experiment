@@ -38,7 +38,7 @@ export class RegionsListComponent implements OnInit {
     })
   }
   addRegionClicked(){
-    let modelRef = this._modalService.open(RegionsActionModalComponent,{
+    const modelRef = this._modalService.open(RegionsActionModalComponent,{
       height:"170px",
       width:"300px",
       data:{
@@ -56,7 +56,7 @@ export class RegionsListComponent implements OnInit {
   }
   editRegion(region: any){
     console.log(region);
-    let modelRef = this._modalService.open(RegionsActionModalComponent,{
+    const modelRef = this._modalService.open(RegionsActionModalComponent,{
       height:"170px",
       width:"300px",
       data:{
@@ -65,7 +65,7 @@ export class RegionsListComponent implements OnInit {
     })
     modelRef.afterClosed().subscribe(res=>{
       if(res && res.RegionName){
-        let postObj = {
+        const postObj = {
           RegionID:region.regionID,
           RegionName:res.RegionName
         }
@@ -86,7 +86,7 @@ export class RegionsListComponent implements OnInit {
   }
   deleteRegion(region: { regionName: string; regionID: any; }){
     let isDeleted:boolean;
-    let dialogRef = this.dialog.open(ConfirmationAlertComponent,{
+    const dialogRef = this.dialog.open(ConfirmationAlertComponent,{
       width:'350px',
       height:'120px',
       data:{
@@ -108,7 +108,7 @@ export class RegionsListComponent implements OnInit {
   }
   
   callCreateRegions_api(Region: { RegionName: any; }){
-    let postObj:IRegionCreate={
+    const postObj:IRegionCreate={
       RegionName:Region.RegionName
     }
     this._regionsService.createRegion(postObj).subscribe((res)=>{

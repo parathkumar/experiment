@@ -49,7 +49,7 @@ export class CustomerActionsModalComponent implements OnInit {
     })
   }
   onSubmit(values: any){
-      let customerObj:Icustomer = customMethods.convertToArray(values,CustomerMultipleFields.fields)
+      const customerObj:Icustomer = customMethods.convertToArray(values,CustomerMultipleFields.fields)
       console.log(customerObj);
       if(this.modalType == actionConstants.create){
         this.callCreateCustomer_api(customerObj);
@@ -65,7 +65,7 @@ export class CustomerActionsModalComponent implements OnInit {
       apiResult = res;
     },()=>{},()=>{
       if(apiResult.statusCode === 1){
-        let dialogRef = this.dialog.open(SuccessAlertComponent,{
+        const dialogRef = this.dialog.open(SuccessAlertComponent,{
           width:'350px',
           height:'120px',
           data:{
@@ -89,7 +89,7 @@ export class CustomerActionsModalComponent implements OnInit {
       apiResult = res;
     },()=>{},()=>{
       if(apiResult.statusCode === 1){
-        let dialogRef = this.dialog.open(SuccessAlertComponent,{
+        const dialogRef = this.dialog.open(SuccessAlertComponent,{
           width:'350px',
           height:'120px',
           data:{

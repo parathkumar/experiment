@@ -36,7 +36,7 @@ export class ReleaseOrderContainerComponent implements OnInit {
   applyFilter(event: any){
   }
   onAddRO(){
-    let dialogRef = this.dialog.open(RoActionsModalComponent,{
+    const dialogRef = this.dialog.open(RoActionsModalComponent,{
       width:'1700px',
       height:'550px',
       data:{type:actionConstants.create,data:{}}
@@ -48,7 +48,7 @@ export class ReleaseOrderContainerComponent implements OnInit {
     });
   }
   ResolveData(){
-    let calls=[
+    const calls=[
       this._releaseOrderService.getReleaseOrdersList()
     ];
     forkJoin(calls).subscribe((resp:IApiResponse[])=>{
@@ -69,7 +69,7 @@ export class ReleaseOrderContainerComponent implements OnInit {
   }
   onEditRO(element: any){
     console.log(element);
-    let dialogRef = this.dialog.open(RoActionsModalComponent,{
+    const dialogRef = this.dialog.open(RoActionsModalComponent,{
       width:'1400px',
       height:'520px',
       data:{type:actionConstants.edit,data:element}
@@ -83,7 +83,7 @@ export class ReleaseOrderContainerComponent implements OnInit {
   onDelete(ro:IReleaseOrder){
     console.log(ro);
     let isDeleted:boolean;
-    let dialogRef = this.dialog.open(ConfirmationAlertComponent,{
+    const dialogRef = this.dialog.open(ConfirmationAlertComponent,{
       width:'350px',
       height:'120px',
       data:{

@@ -19,7 +19,7 @@ export class ConditionalMultiDatepickerComponent implements OnInit {
 
   DateRangeFormGroup!: FormGroup;
   logicFormGroup!: FormGroup;
-  isOptionalStep: Boolean = true;
+  isOptionalStep: boolean = true;
   daysOfWeek:string[] = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   types:string[] = ['All','Alternate','First','Second','Third','Fourth'];
   constructor(private _formBuilder: FormBuilder,private selectedDaysService:AdvancedDatepickerService) { }

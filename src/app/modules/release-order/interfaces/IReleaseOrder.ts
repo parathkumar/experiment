@@ -1,11 +1,11 @@
 export interface IReleaseOrder {
-    roId:Number;
-    roNumber?:Number;
+    roId:number;
+    roNumber?:number;
     insertionDateDesc?:string;
     insertionDates?:any[];//Date[];
-    width?:Number;
-    height?:Number;
-    cost?:Number;
+    width?:number;
+    height?:number;
+    cost?:number;
     costPer?:string;
     caption?:string;
     position?:string;

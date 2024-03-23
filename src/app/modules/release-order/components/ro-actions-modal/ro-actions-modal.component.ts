@@ -67,7 +67,7 @@ export class RoActionsModalComponent implements OnInit {
   }
 
   resolveData(){
-    let calls=[
+    const calls=[
       this.customerService.getCustomersList(),
       this.publicationService.getPublicationsList(),
       this.regionService.getRegionsList()
@@ -79,7 +79,7 @@ export class RoActionsModalComponent implements OnInit {
     });
   }
   OpenAdvancedDatePicker(){
-    let dialogRef = this.dialog.open(AdvancedDatepickerComponent,{
+    const dialogRef = this.dialog.open(AdvancedDatepickerComponent,{
       width:'800px',
       height:'600px',
       data:{}

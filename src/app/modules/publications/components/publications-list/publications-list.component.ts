@@ -24,7 +24,7 @@ export class PublicationsListComponent implements OnInit {
     this.ResolveData();
   }
   ResolveData(){
-    let calls=[
+    const calls=[
       this.publicationsService.getPublicationsList()
     ];
     forkJoin(calls).subscribe((resp:IApiResponse[])=>{
@@ -38,7 +38,7 @@ export class PublicationsListComponent implements OnInit {
   }
   onEdit(publication: any)
   {
-    let dialogRef=this.dialog.open(PublicationActionsModalComponent,{
+    const dialogRef=this.dialog.open(PublicationActionsModalComponent,{
       width:'750px',
       height:'490px',
       data:{type:actionConstants.edit,data:publication }
@@ -47,7 +47,7 @@ export class PublicationsListComponent implements OnInit {
     dialogRef.afterClosed().subscribe((res)=>{
       if(res?.result)
       {
-        let successdialogref=this.dialog.open(SuccessAlertComponent,{
+        const successdialogref=this.dialog.open(SuccessAlertComponent,{
           width:'350px',
           height:'125px',
           data:{
@@ -60,7 +60,7 @@ export class PublicationsListComponent implements OnInit {
   }
  onDelete(publication: { publicationName: string; publicationId: number; })
  {
-    let dialogref=this.dialog.open(ConfirmationAlertComponent,{
+    const dialogref=this.dialog.open(ConfirmationAlertComponent,{
       width:'350px',
     height:'120px',
     data:{
@@ -74,7 +74,7 @@ dialogref.afterClosed().subscribe(result=>{
   {
     if(res.result)
     {
-      let diaogref=this.dialog.open(SuccessAlertComponent,{
+      const diaogref=this.dialog.open(SuccessAlertComponent,{
         width:'350px',
         height:'125px',
         data:{
@@ -86,7 +86,7 @@ dialogref.afterClosed().subscribe(result=>{
     }
     else
     {
-      let dialogRef=this.dialog.open(ErrorAlertComponent,{
+      const dialogRef=this.dialog.open(ErrorAlertComponent,{
         width:'350px',
         height:'125px',
         data:{

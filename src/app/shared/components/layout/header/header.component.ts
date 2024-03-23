@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
   }
   toggleSidebar(){
     this.toggleSidebarValue = !this.toggleSidebarValue;
-    this.layoutService.toggleSidebar.emit(this.toggleSidebarValue);
+    this.layoutService.showSidebar.set(this.toggleSidebarValue);
   }
 
   logout(){

@@ -69,7 +69,7 @@ export class CustomersContainerComponent implements OnInit{
   
 
   onAddCustomer(){
-    let dialogRef = this.dialog.open(CustomerActionsModalComponent,{
+    const dialogRef = this.dialog.open(CustomerActionsModalComponent,{
       width:'1000px',
       height:'510px',
       data:{type:actionConstants.create,data:{}}
@@ -82,8 +82,8 @@ export class CustomersContainerComponent implements OnInit{
   }
 
   onEditCustomer(customer:Icustomer){
-    let customerData = customMethods.reduceToPrimary(customer,CustomerMultipleFields.fields);
-    let dialogRef = this.dialog.open(CustomerActionsModalComponent,{
+    const customerData = customMethods.reduceToPrimary(customer,CustomerMultipleFields.fields);
+    const dialogRef = this.dialog.open(CustomerActionsModalComponent,{
       width:'1000px',
       height:'510px',
       data:{type:actionConstants.edit,data:customerData}
@@ -97,7 +97,7 @@ export class CustomersContainerComponent implements OnInit{
 
   onDelete(customer:Icustomer){
     let isDeleted:boolean;
-    let dialogRef = this.dialog.open(ConfirmationAlertComponent,{
+    const dialogRef = this.dialog.open(ConfirmationAlertComponent,{
       width:'350px',
       height:'120px',
       data:{

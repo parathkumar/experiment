@@ -4,7 +4,7 @@ export class customMethods {
    * @param {any} fields - key value pair of field in object and fieldname in array.
    */
     public static reduceToPrimary(object: any, fields: any) {
-      let finalObj = { ...object };
+      const finalObj = { ...object };
       Object.keys(fields).forEach((field) => {
         finalObj[field] = (Array.isArray(object[field]) && object[field].length > 0) ? (object[field] as any[]).find(rec => {
           return rec.isPrimary;
@@ -17,12 +17,12 @@ export class customMethods {
   * @param {any} fields - key value pair of field in object and fieldname in array.
   */
     public static convertToArray(object: any, fields: any) {
-      let finalObj = { ...object };
+      const finalObj = { ...object };
   
       Object.keys(fields).forEach((field) => {
         if (!Array.isArray(object[field])) {
-          let fieldName = fields[field];
-          let obj: any = { isPrimary: true }
+          const fieldName = fields[field];
+          const obj: any = { isPrimary: true }
           obj[fieldName] = finalObj[field];
           finalObj[field] = [obj];
         }

@@ -24,7 +24,7 @@ export class PublicationsContainerComponent implements OnInit {
   ngOnInit(): void {
   }
   openAddPublicationsModal(){
-        let dialogRef = this.dialog.open(PublicationActionsModalComponent,{
+        const dialogRef = this.dialog.open(PublicationActionsModalComponent,{
           width:'750px',
           height:'500px',
           data:{type:actionConstants.create,data:{}}

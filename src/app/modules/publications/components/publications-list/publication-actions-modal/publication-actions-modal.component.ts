@@ -50,7 +50,7 @@ data:IPublication;
   createPublication(Publicationobj: { name: any; })
   {
     let apiResult:IApiResponse;
-    let postObject = {
+    const postObject = {
       PublicationName:Publicationobj.name,
       PublicationLogo:this.uploadedImage.base64
     }
@@ -63,7 +63,7 @@ data:IPublication;
     },
     ()=>{
       if(apiResult.statusCode === 1){
-        let dialogRef = this.dialog.open(SuccessAlertComponent,{
+        const dialogRef = this.dialog.open(SuccessAlertComponent,{
           width:'350px',
           height:'120px',
           data:{
@@ -90,7 +90,7 @@ data:IPublication;
   }
   editPublication(Publicationobj: { name: any; })
   {
-    let postObject= {
+    const postObject= {
       PublicationId: this.data.publicationId,
       PublicationName: Publicationobj.name,
       PublicationLogo:(this.uploadedImage?this.uploadedImage.base64:this.data.publicationLogo.toString().split(',')[1])
@@ -102,7 +102,7 @@ data:IPublication;
       }
       else
       {
-        let dialogRef=this.dialog.open(ErrorAlertComponent,{
+        const dialogRef=this.dialog.open(ErrorAlertComponent,{
           width:'350px',
           height:'125px',
           data:{
